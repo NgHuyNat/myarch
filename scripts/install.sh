@@ -82,6 +82,34 @@ install_packages() {
         yay -S --needed --noconfirm -
     
     print_success "AUR packages installed"
+    
+    # Install fonts
+    print_step "Installing fonts..."
+    
+    # Font packages from fonts.txt (mix of pacman and AUR)
+    FONT_PACKAGES=(
+        "noto-fonts"
+        "noto-fonts-cjk"
+        "noto-fonts-emoji"
+        "ttf-dejavu"
+        "ttf-liberation"
+        "ttf-opensans"
+        "cantarell-fonts"
+        "ttf-google-sans"
+        "ttf-gabarito-git"
+        "ttf-readex-pro"
+        "ttf-rubik"
+        "otf-space-grotesk"
+        "ttf-jetbrains-mono-nerd"
+        "ttf-material-symbols-variable-git"
+    )
+    
+    yay -S --needed --noconfirm "${FONT_PACKAGES[@]}"
+    
+    # Refresh font cache
+    fc-cache -fv
+    
+    print_success "Fonts installed"
 }
 
 # Install Oh-My-Zsh

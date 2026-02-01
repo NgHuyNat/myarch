@@ -1,0 +1,61 @@
+# Font packages required for end-4/dots-hyprland (illogical-impulse)
+# These fonts are installed via pacman/yay, not manually copied
+
+# ===== OFFICIAL REPOS (pacman) =====
+# Noto fonts (CJK, Emoji, etc.)
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
+
+# Basic fonts
+ttf-dejavu
+ttf-liberation
+ttf-opensans
+ttf-bitstream-vera
+cantarell-fonts
+
+# ===== AUR (yay) =====
+# Google Sans (used by widgets)
+ttf-google-sans
+
+# Gabarito (headings in widgets)
+ttf-gabarito-git
+
+# Readex Pro (UI text)
+ttf-readex-pro
+
+# Rubik (alternative UI)
+ttf-rubik
+
+# Space Grotesk (modern sans)
+otf-space-grotesk
+
+# JetBrains Mono Nerd Font (terminal)
+ttf-jetbrains-mono-nerd
+
+# Material Symbols (icons in quickshell)
+ttf-material-symbols-variable-git
+
+# Lexend (optional, good readability)
+# ttf-lexend
+
+# ===== USAGE IN DOTFILES =====
+# 
+# Terminal (Kitty):
+#   - JetBrainsMono Nerd Font
+#
+# Quickshell widgets:
+#   - Gabarito (headings)
+#   - Readex Pro (body text)
+#   - Google Sans (alternative)
+#   - Material Symbols Rounded (icons)
+#   - Rubik (numbers, labels)
+#
+# System UI:
+#   - Cantarell (GNOME default)
+#   - Noto Sans (fallback)
+#
+# Code editors:
+#   - JetBrains Mono
+#   - Fira Code (optional)
