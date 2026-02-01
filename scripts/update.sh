@@ -32,6 +32,7 @@ CONFIG_DIRS=(
     "btop"
     "waybar"
     "cava"
+    "quickshell"
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do

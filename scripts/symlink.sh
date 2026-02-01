@@ -46,6 +46,7 @@ declare -A CONFIG_DIRS=(
     ["zshrc.d"]="ZSH snippets"
     ["foot"]="Foot terminal"
     ["cava"]="Cava visualizer"
+    ["quickshell"]="Quickshell widgets"
 )
 
 for dir in "${!CONFIG_DIRS[@]}"; do
