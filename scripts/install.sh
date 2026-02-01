@@ -231,9 +231,38 @@ enable_services() {
     sudo systemctl enable --now bluetooth.service 2>/dev/null || true
     sudo systemctl enable --now NetworkManager.service 2>/dev/null || true
     sudo systemctl enable --now docker.service 2>/dev/null || true
-    sudo systemctl enable --now sddm.service 2>/dev/null || true
+    
+    # Display manager - GDM (for GNOME + Hyprland dual session)
+    sudo systemctl disable sddm.service 2>/dev/null || true
+    sudo systemctl disable lightdm.service 2>/dev/null || true
+    sudo systemctl enable gdm.service 2>/dev/null || true
     
     print_success "Services enabled"
+}
+
+# Apply system configs (GRUB, GDM, GNOME)
+apply_system_configs() {
+    print_step "Applying system configurations..."
+    
+    # GRUB
+    if [ -f "$DOTFILES_DIR/system/etc/default/grub" ]; then
+        sudo cp /etc/default/grub /etc/default/grub.backup 2>/dev/null || true
+        sudo cp "$DOTFILES_DIR/system/etc/default/grub" /etc/default/grub
+        sudo grub-mkconfig -o /boot/grub/grub.cfg
+        print_success "GRUB config applied"
+    fi
+    
+    # GDM
+    if [ -f "$DOTFILES_DIR/system/etc/gdm/custom.conf" ] && [ -d "/etc/gdm" ]; then
+        sudo cp "$DOTFILES_DIR/system/etc/gdm/custom.conf" /etc/gdm/custom.conf
+        print_success "GDM config applied"
+    fi
+    
+    # GNOME dconf settings
+    if [ -f "$DOTFILES_DIR/system/dconf-settings.ini" ]; then
+        dconf load / < "$DOTFILES_DIR/system/dconf-settings.ini"
+        print_success "GNOME settings applied"
+    fi
 }
 
 # Set ZSH as default shell
@@ -273,13 +302,14 @@ main() {
     
     echo ""
     echo "Select installation options:"
-    echo "  1) Full installation (packages + configs)"
+    echo "  1) Full installation (packages + configs + system)"
     echo "  2) Packages only"
     echo "  3) Configs only (symlinks)"
-    echo "  4) Exit"
+    echo "  4) System configs only (GRUB + GDM + GNOME)"
+    echo "  5) Exit"
     echo ""
     
-    read -p "Enter choice [1-4]: " choice
+    read -p "Enter choice [1-5]: " choice
     
     case $choice in
         1)
@@ -287,6 +317,7 @@ main() {
             install_packages
             install_ohmyzsh
             create_symlinks
+            apply_system_configs
             enable_services
             set_zsh_default
             ;;
@@ -299,6 +330,10 @@ main() {
             create_symlinks
             ;;
         4)
+            apply_system_configs
+            enable_services
+            ;;
+        5)
             print_warning "Exiting..."
             exit 0
             ;;

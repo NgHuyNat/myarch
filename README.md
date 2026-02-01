@@ -3,6 +3,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/OS-Arch%20Linux-1793D1?style=for-the-badge&logo=arch-linux&logoColor=white"/>
   <img src="https://img.shields.io/badge/WM-Hyprland-58a6ff?style=for-the-badge&logo=wayland&logoColor=white"/>
+  <img src="https://img.shields.io/badge/DE-GNOME-4A86CF?style=for-the-badge&logo=gnome&logoColor=white"/>
   <img src="https://img.shields.io/badge/Shell-ZSH-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white"/>
   <img src="https://img.shields.io/badge/Editor-Neovim-57A143?style=for-the-badge&logo=neovim&logoColor=white"/>
 </p>
@@ -15,21 +16,22 @@
 
 ## ⚙️ System Info
 
-| Component          | Details                         |
-| ------------------ | ------------------------------- |
-| **OS**             | Arch Linux (EndeavourOS base)   |
-| **Window Manager** | Hyprland                        |
-| **Bar**            | Waybar                          |
-| **Terminal**       | Kitty                           |
-| **Shell**          | ZSH + Oh-My-Zsh + Powerlevel10k |
-| **Prompt**         | Starship                        |
-| **Editor**         | Neovim (LazyVim)                |
-| **Launcher**       | Fuzzel                          |
-| **File Manager**   | Nautilus                        |
-| **Theme**          | Dracula                         |
-| **Cursors**        | Breeze Snow / Capitaine         |
-| **Icons**          | Papirus                         |
-| **Input Method**   | Fcitx5 + Bamboo (Vietnamese)    |
+| Component          | Details                           |
+| ------------------ | --------------------------------- |
+| **OS**             | Arch Linux (EndeavourOS base)     |
+| **Window Manager** | Hyprland + GNOME (dual session)   |
+| **Display Manager**| GDM                               |
+| **Widgets**        | Quickshell (illogical-impulse)    |
+| **Terminal**       | Kitty                             |
+| **Shell**          | ZSH + Oh-My-Zsh + Powerlevel10k   |
+| **Prompt**         | Starship                          |
+| **Editor**         | Neovim (LazyVim)                  |
+| **Launcher**       | Fuzzel                            |
+| **File Manager**   | Nautilus                          |
+| **Theme**          | Dracula / adw-gtk3-dark           |
+| **Cursors**        | Breeze Snow                       |
+| **Icons**          | Papirus                           |
+| **Input Method**   | Fcitx5 + Bamboo (Vietnamese)      |
 
 ## 📁 Structure
 
@@ -37,11 +39,12 @@
 myarch/
 ├── config/                 # ~/.config files
 │   ├── hypr/              # Hyprland config
+│   ├── quickshell/        # Quickshell widgets (illogical-impulse)
 │   ├── kitty/             # Kitty terminal
 │   ├── nvim/              # Neovim config
-│   ├── waybar/            # Waybar config
+│   ├── fcitx5/            # Vietnamese input method
 │   ├── fuzzel/            # Fuzzel launcher
-│   ├── btop/              # Btop system monitor
+│   ├── cava/              # Audio visualizer
 │   ├── gtk-3.0/           # GTK3 settings
 │   ├── gtk-4.0/           # GTK4 settings
 │   ├── qt5ct/             # Qt5 settings
@@ -52,15 +55,22 @@ myarch/
 │   ├── .p10k.zsh          # Powerlevel10k
 │   ├── .gitconfig         # Git config
 │   └── .gtkrc-2.0         # GTK2 settings
+├── system/                # System configs (require sudo)
+│   ├── etc/default/grub   # GRUB bootloader config
+│   ├── etc/gdm/           # GDM display manager config
+│   └── dconf-settings.ini # GNOME dconf settings
 ├── scripts/               # Installation & utility scripts
 │   ├── install.sh         # Main install script
-│   ├── packages.sh        # Package installation
-│   └── symlink.sh         # Create symlinks
+│   ├── symlink.sh         # Create symlinks
+│   ├── update.sh          # Sync dotfiles from system
+│   └── apply-system.sh    # Apply GRUB/GDM/GNOME configs
 ├── packages/              # Package lists
 │   ├── pacman.txt         # Official repo packages
-│   └── aur.txt            # AUR packages
+│   ├── aur.txt            # AUR packages
+│   └── fonts.txt          # Font packages
+├── docs/                  # Documentation
+│   └── VM_INSTALL.md      # VM installation guide
 ├── wallpapers/            # Wallpaper collection
-├── fonts/                 # Custom fonts
 └── screenshots/           # Desktop screenshots
 ```
 

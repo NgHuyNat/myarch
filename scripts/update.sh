@@ -74,6 +74,26 @@ for file in "${HOME_FILES[@]}"; do
     fi
 done
 
+# Update system configs
+echo -e "\n${CYAN}Updating system configs...${NC}"
+mkdir -p "$DOTFILES_DIR/system/etc/default" "$DOTFILES_DIR/system/etc/gdm"
+
+# GRUB config (requires sudo)
+if [ -f "/etc/default/grub" ]; then
+    sudo cp /etc/default/grub "$DOTFILES_DIR/system/etc/default/grub"
+    echo -e "${GREEN}[✓] Synced: /etc/default/grub${NC}"
+fi
+
+# GDM config
+if [ -f "/etc/gdm/custom.conf" ]; then
+    sudo cp /etc/gdm/custom.conf "$DOTFILES_DIR/system/etc/gdm/custom.conf"
+    echo -e "${GREEN}[✓] Synced: /etc/gdm/custom.conf${NC}"
+fi
+
+# GNOME/dconf settings
+dconf dump / > "$DOTFILES_DIR/system/dconf-settings.ini"
+echo -e "${GREEN}[✓] Synced: dconf settings${NC}"
+
 # Update package lists
 echo -e "\n${CYAN}Updating package lists...${NC}"
 pacman -Qqen > "$DOTFILES_DIR/packages/pacman.txt"
@@ -87,3 +107,4 @@ git status --short
 
 echo -e "\n${GREEN}Dotfiles updated!${NC}"
 echo -e "${YELLOW}Run 'git add -A && git commit -m \"Update dotfiles\"' to commit changes${NC}"
+
