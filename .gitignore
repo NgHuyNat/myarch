@@ -1,0 +1,49 @@
+# Cache files
+*.zwc
+*.zwc.old
+.zcompdump*
+
+# Backup files
+*.backup.*
+*.bak
+*~
+
+# Lock files
+*.lock
+lazy-lock.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Private/Sensitive data
+.git-credentials
+.ssh/
+.gnupg/
+*.pem
+*.key
+secrets/
+
+# Large files
+*.hprof
+core.*
+
+# Temporary
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Logs
+*.log
+logs/
+
+# Machine-specific configs (uncomment if needed)
+# config/hypr/monitors.conf
+# config/hypr/workspaces.conf

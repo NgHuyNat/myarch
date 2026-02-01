@@ -1,0 +1,9 @@
+[safe]
+	directory = /speckit
+[user]
+	email = nghuytan.ptit@gmail.com
+	name = NgHuyNat
+[credential]
+	helper = store
+[pager]
+	branch = false

@@ -1,0 +1,75 @@
+# AUR packages
+# Install with: yay -S --needed - < packages/aur.txt
+
+# Browsers
+google-chrome
+
+# IDE & Editors
+visual-studio-code-bin
+cursor-bin
+
+# Terminals
+warp-terminal-bin
+
+# Development Tools
+beekeeper-studio-bin
+bruno-bin
+gitkraken
+mongodb-bin
+mongodb-compass-bin
+ngrok
+jenkins-lts
+
+# Communication
+vesktop-bin
+clickup-desktop
+termius
+
+# Vietnamese Input
+fcitx5-bamboo-git
+
+# Themes & Cursors
+dracula-gtk-theme
+breeze-snow-cursor-theme
+oreo-cursors-git
+ttf-google-sans
+
+# Hyprland Widgets (illogical-impulse)
+illogical-impulse-audio
+illogical-impulse-backlight
+illogical-impulse-basic
+illogical-impulse-bibata-modern-classic-bin
+illogical-impulse-kde
+illogical-impulse-microtex-git
+illogical-impulse-portal
+illogical-impulse-python
+illogical-impulse-screencapture
+illogical-impulse-toolkit
+illogical-impulse-widgets
+grimblast-git
+
+# Remote Desktop
+anydesk-bin
+parsec-bin
+
+# VPN
+eovpn
+
+# System
+antigravity-bin
+snapper-support
+downgrade
+
+# Virtualization
+vmware-workstation
+vmware-keymaps
+
+# Music
+soundcloud-dl
+soundcloud-rpc-bin
+
+# Network
+packettracer
+
+# Package Manager
+snapd
