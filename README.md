@@ -10,25 +10,26 @@
 ## 📸 Screenshots
 
 <!-- Thêm screenshots của bạn vào đây -->
+
 ![Desktop](./screenshots/desktop.png)
 
 ## ⚙️ System Info
 
-| Component | Details |
-|-----------|---------|
-| **OS** | Arch Linux (EndeavourOS base) |
-| **Window Manager** | Hyprland |
-| **Bar** | Waybar |
-| **Terminal** | Kitty |
-| **Shell** | ZSH + Oh-My-Zsh + Powerlevel10k |
-| **Prompt** | Starship |
-| **Editor** | Neovim (LazyVim) |
-| **Launcher** | Fuzzel |
-| **File Manager** | Nautilus |
-| **Theme** | Dracula |
-| **Cursors** | Breeze Snow / Capitaine |
-| **Icons** | Papirus |
-| **Input Method** | Fcitx5 + Bamboo (Vietnamese) |
+| Component          | Details                         |
+| ------------------ | ------------------------------- |
+| **OS**             | Arch Linux (EndeavourOS base)   |
+| **Window Manager** | Hyprland                        |
+| **Bar**            | Waybar                          |
+| **Terminal**       | Kitty                           |
+| **Shell**          | ZSH + Oh-My-Zsh + Powerlevel10k |
+| **Prompt**         | Starship                        |
+| **Editor**         | Neovim (LazyVim)                |
+| **Launcher**       | Fuzzel                          |
+| **File Manager**   | Nautilus                        |
+| **Theme**          | Dracula                         |
+| **Cursors**        | Breeze Snow / Capitaine         |
+| **Icons**          | Papirus                         |
+| **Input Method**   | Fcitx5 + Bamboo (Vietnamese)    |
 
 ## 📁 Structure
 
@@ -105,6 +106,7 @@ reboot
 ## 📦 Packages
 
 ### Core Packages (Official)
+
 - `hyprland` - Wayland compositor
 - `waybar` - Status bar
 - `kitty` - Terminal emulator
@@ -116,6 +118,7 @@ reboot
 - And more...
 
 ### AUR Packages
+
 - `visual-studio-code-bin` - Code editor
 - `google-chrome` - Browser
 - `cursor-bin` - AI IDE
@@ -124,20 +127,21 @@ reboot
 
 ## ⌨️ Keybindings
 
-| Keybind | Action |
-|---------|--------|
-| `SUPER + Return` | Open Terminal |
-| `SUPER + Q` | Close Window |
-| `SUPER + D` | App Launcher (Fuzzel) |
-| `SUPER + E` | File Manager |
-| `SUPER + 1-9` | Switch Workspace |
-| `SUPER + Shift + 1-9` | Move to Workspace |
-| `SUPER + F` | Fullscreen |
-| `SUPER + V` | Toggle Floating |
+| Keybind               | Action                |
+| --------------------- | --------------------- |
+| `SUPER + Return`      | Open Terminal         |
+| `SUPER + Q`           | Close Window          |
+| `SUPER + D`           | App Launcher (Fuzzel) |
+| `SUPER + E`           | File Manager          |
+| `SUPER + 1-9`         | Switch Workspace      |
+| `SUPER + Shift + 1-9` | Move to Workspace     |
+| `SUPER + F`           | Fullscreen            |
+| `SUPER + V`           | Toggle Floating       |
 
 ## 🎨 Theming
 
 The setup uses **Dracula** theme consistently across:
+
 - GTK apps (gtk-3.0, gtk-4.0)
 - Qt apps (qt5ct, qt6ct, Kvantum)
 - Terminal (Kitty)
