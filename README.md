@@ -185,6 +185,7 @@ After installation, you may need to:
 - [illogical-impulse](https://github.com/end-4/dots-hyprland)
 - [LazyVim](https://www.lazyvim.org/)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [DotfilesEnd-4] (https://github.com/end-4/dots-hyprland)
 
 ## 📄 License
 
