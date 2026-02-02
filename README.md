@@ -98,6 +98,13 @@ chmod +x scripts/*.sh
 ./scripts/install.sh
 ```
 
+```bash
+# Run the installer with dotfiles end4
+cd ~/myarch
+chmod +x scripts/*.sh
+./scripts/install-with-end4.sh
+```
+
 ### Manual Installation
 
 If you prefer to install manually:
