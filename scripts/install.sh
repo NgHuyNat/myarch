@@ -145,6 +145,13 @@ install_ohmyzsh() {
         git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
         print_success "zsh-syntax-highlighting plugin installed"
     fi
+    
+    # Create custom alias directory and file
+    if [ ! -d "$ZSH_CUSTOM/alias" ]; then
+        mkdir -p "$ZSH_CUSTOM/alias"
+        touch "$ZSH_CUSTOM/alias/alias.zsh"
+        print_success "Custom alias directory created"
+    fi
 }
 
 # Create symlinks
