@@ -182,8 +182,30 @@ yay -S --needed --noconfirm fcitx5 fcitx5-gtk fcitx5-qt fcitx5-configtool fcitx5
 # GNOME for dual session
 sudo pacman -S --needed --noconfirm gnome gdm nautilus 2>/dev/null || true
 
+# ===== NVIDIA Setup (for real hardware, skip on VM) =====
+print_step "Checking for NVIDIA GPU..."
+
+if lspci | grep -i nvidia > /dev/null 2>&1; then
+    print_warning "NVIDIA GPU detected! Installing drivers..."
+    sudo pacman -S --needed --noconfirm linux-headers nvidia-dkms nvidia-utils egl-wayland 2>/dev/null || true
+    
+    # Rebuild initramfs
+    if command -v dracut &> /dev/null; then
+        print_step "Rebuilding initramfs with dracut..."
+        sudo dracut-rebuild 2>/dev/null || true
+    elif command -v mkinitcpio &> /dev/null; then
+        print_step "Rebuilding initramfs with mkinitcpio..."
+        sudo mkinitcpio -P 2>/dev/null || true
+    fi
+    print_success "NVIDIA drivers installed"
+else
+    print_warning "No NVIDIA GPU detected (VM or Intel/AMD). Skipping NVIDIA drivers."
+fi
+
 # Enable GDM
+print_step "Enabling GDM display manager..."
 sudo systemctl enable gdm.service 2>/dev/null || true
+sudo systemctl enable --now gdm.service 2>/dev/null || true
 
 print_success "Additional packages installed"
 
@@ -207,6 +229,11 @@ echo "  ✓ Your custom Hyprland config"
 echo "  ✓ Your custom terminal/editor configs"
 echo "  ✓ Vietnamese input (Fcitx5)"
 echo "  ✓ GNOME + GDM for dual session"
+echo "  ✓ NVIDIA drivers (if GPU detected)"
+echo ""
+echo -e "${CYAN}After reboot:${NC}"
+echo "  - GDM login screen will appear"
+echo "  - Click ⚙️ icon to choose Hyprland or GNOME"
 echo ""
 echo -e "${YELLOW}Please reboot to apply all changes.${NC}"
 echo ""

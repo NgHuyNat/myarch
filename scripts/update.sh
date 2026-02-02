@@ -32,15 +32,25 @@ CONFIG_DIRS=(
     "btop"
     "waybar"
     "cava"
-    "quickshell"
+    "quickshell/ii"
+    "Kvantum"
+    "fish"
+    "fontconfig"
+    "kde-material-you-colors"
+    "matugen"
+    "mpv"
+    "wlogout"
+    "xdg-desktop-portal"
+    "fcitx5"
 )
 
 for dir in "${CONFIG_DIRS[@]}"; do
     if [ -d "$HOME/.config/$dir" ]; then
         rm -rf "$DOTFILES_DIR/config/$dir"
-        cp -r "$HOME/.config/$dir" "$DOTFILES_DIR/config/"
+        mkdir -p "$(dirname "$DOTFILES_DIR/config/$dir")"
+        cp -r "$HOME/.config/$dir" "$DOTFILES_DIR/config/$dir"
         # Remove any .git subdirectories
-        rm -rf "$DOTFILES_DIR/config/$dir/.git" 2>/dev/null || true
+        find "$DOTFILES_DIR/config/$dir" -name ".git" -type d -exec rm -rf {} + 2>/dev/null || true
         echo -e "${GREEN}[✓] Synced: ~/.config/$dir${NC}"
     fi
 done
@@ -50,6 +60,11 @@ CONFIG_FILES=(
     "starship.toml"
     "chrome-flags.conf"
     "code-flags.conf"
+    "thorium-flags.conf"
+    "darklyrc"
+    "dolphinrc"
+    "kdeglobals"
+    "konsolerc"
 )
 
 for file in "${CONFIG_FILES[@]}"; do

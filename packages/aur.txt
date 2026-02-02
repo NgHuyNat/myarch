@@ -1,40 +1,17 @@
-# AUR packages
-# Install with: yay -S --needed - < packages/aur.txt
-
-# Browsers
-google-chrome
-
-# IDE & Editors
-visual-studio-code-bin
-cursor-bin
-
-# Terminals
-warp-terminal-bin
-
-# Development Tools
+antigravity-bin
+anydesk-bin
 beekeeper-studio-bin
-bruno-bin
-gitkraken
-mongodb-bin
-mongodb-compass-bin
-ngrok
-jenkins-lts
-
-# Communication
-vesktop-bin
-clickup-desktop
-termius
-
-# Vietnamese Input
-fcitx5-bamboo-git
-
-# Themes & Cursors
-dracula-gtk-theme
 breeze-snow-cursor-theme
-oreo-cursors-git
-ttf-google-sans
-
-# Hyprland Widgets (illogical-impulse)
+bruno-bin
+clickup-desktop
+cursor-bin
+dracula-gtk-theme
+eovpn
+fcitx5-bamboo-git
+fcitx5-vmk
+gitkraken
+google-chrome
+grimblast-git
 illogical-impulse-audio
 illogical-impulse-backlight
 illogical-impulse-basic
@@ -46,30 +23,21 @@ illogical-impulse-python
 illogical-impulse-screencapture
 illogical-impulse-toolkit
 illogical-impulse-widgets
-grimblast-git
-
-# Remote Desktop
-anydesk-bin
+jenkins-lts
+mongodb-bin
+mongodb-compass-bin
+ngrok
+oreo-cursors-git
+packettracer
 parsec-bin
-
-# VPN
-eovpn
-
-# System
-antigravity-bin
+snapd
 snapper-support
-downgrade
-
-# Virtualization
-vmware-workstation
-vmware-keymaps
-
-# Music
 soundcloud-dl
 soundcloud-rpc-bin
-
-# Network
-packettracer
-
-# Package Manager
-snapd
+termius
+ttf-google-sans
+vesktop-bin
+visual-studio-code-bin
+vmware-keymaps
+vmware-workstation
+warp-terminal-bin
