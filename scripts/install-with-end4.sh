@@ -205,9 +205,15 @@ fi
 # Enable GDM
 print_step "Enabling GDM display manager..."
 sudo systemctl enable gdm.service 2>/dev/null || true
-sudo systemctl enable --now gdm.service 2>/dev/null || true
 
-print_success "Additional packages installed"
+# Disable other display managers if they exist
+sudo systemctl disable sddm.service 2>/dev/null || true
+sudo systemctl disable lightdm.service 2>/dev/null || true
+
+# Set graphical target as default
+sudo systemctl set-default graphical.target
+
+print_success "GDM enabled - will start on next boot"
 
 # ===== STEP 4: Apply system configs =====
 print_step "Applying system configs (GRUB, GDM, GNOME)..."
