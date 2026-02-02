@@ -16,22 +16,22 @@
 
 ## ⚙️ System Info
 
-| Component          | Details                           |
-| ------------------ | --------------------------------- |
-| **OS**             | Arch Linux (EndeavourOS base)     |
-| **Window Manager** | Hyprland + GNOME (dual session)   |
-| **Display Manager**| GDM                               |
-| **Widgets**        | Quickshell (illogical-impulse)    |
-| **Terminal**       | Kitty                             |
-| **Shell**          | ZSH + Oh-My-Zsh + Powerlevel10k   |
-| **Prompt**         | Starship                          |
-| **Editor**         | Neovim (LazyVim)                  |
-| **Launcher**       | Fuzzel                            |
-| **File Manager**   | Nautilus                          |
-| **Theme**          | Dracula / adw-gtk3-dark           |
-| **Cursors**        | Breeze Snow                       |
-| **Icons**          | Papirus                           |
-| **Input Method**   | Fcitx5 + Bamboo (Vietnamese)      |
+| Component           | Details                         |
+| ------------------- | ------------------------------- |
+| **OS**              | Arch Linux (EndeavourOS base)   |
+| **Window Manager**  | Hyprland + GNOME (dual session) |
+| **Display Manager** | GDM                             |
+| **Widgets**         | Quickshell (illogical-impulse)  |
+| **Terminal**        | Kitty                           |
+| **Shell**           | ZSH + Oh-My-Zsh + Powerlevel10k |
+| **Prompt**          | Starship                        |
+| **Editor**          | Neovim (LazyVim)                |
+| **Launcher**        | Fuzzel                          |
+| **File Manager**    | Nautilus                        |
+| **Theme**           | Dracula / adw-gtk3-dark         |
+| **Cursors**         | Breeze Snow                     |
+| **Icons**           | Papirus                         |
+| **Input Method**    | Fcitx5 + Bamboo (Vietnamese)    |
 
 ## 📁 Structure
 
@@ -90,7 +90,7 @@ git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
 
 ```bash
 # Clone the repo
-git clone https://github.com/YOUR_USERNAME/myarch.git ~/myarch
+git clone https://github.com/nghuynat/myarch.git ~/myarch
 
 # Run the installer
 cd ~/myarch

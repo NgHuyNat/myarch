@@ -3,6 +3,7 @@
 ## Bước 1: Tạo máy ảo Arch Linux
 
 ### Option A: VirtualBox
+
 ```bash
 # Tạo VM mới:
 # - Name: arch-test
@@ -14,6 +15,7 @@
 ```
 
 ### Option B: VMware Workstation
+
 ```bash
 # Tạo VM mới:
 # - Guest OS: Other Linux 6.x kernel 64-bit
@@ -23,6 +25,7 @@
 ```
 
 ### Option C: QEMU/KVM (Virt-Manager)
+
 ```bash
 # Tốt nhất cho Wayland/Hyprland
 virt-manager
@@ -32,16 +35,19 @@ virt-manager
 ## Bước 2: Cài Arch Linux cơ bản
 
 ### Download ISO
+
 - **EndeavourOS** (recommend - có Hyprland sẵn): https://endeavouros.com/
 - **Arch Linux**: https://archlinux.org/download/
 
 ### Nếu dùng EndeavourOS:
+
 1. Boot ISO
 2. Chọn **Online Install**
 3. Chọn **Hyprland** trong Desktop selection
 4. Hoàn thành cài đặt
 
 ### Nếu dùng Arch Linux thuần:
+
 ```bash
 # Sau khi cài base system, cài thêm:
 pacman -S git base-devel networkmanager
@@ -86,6 +92,7 @@ fcitx5-configtool
 ## ⚠️ Lưu ý cho máy ảo
 
 ### VirtualBox:
+
 ```bash
 # Cài Guest Additions
 sudo pacman -S virtualbox-guest-utils
@@ -93,6 +100,7 @@ sudo systemctl enable vboxservice
 ```
 
 ### VMware:
+
 ```bash
 # Cài VMware tools
 sudo pacman -S open-vm-tools
@@ -100,6 +108,7 @@ sudo systemctl enable vmtoolsd
 ```
 
 ### Hyprland trên máy ảo:
+
 ```bash
 # Nếu gặp lỗi GPU, thêm vào ~/.config/hypr/hyprland.conf:
 env = WLR_NO_HARDWARE_CURSORS,1
@@ -109,6 +118,7 @@ env = WLR_RENDERER_ALLOW_SOFTWARE,1
 ## 🔧 Troubleshooting
 
 ### Không boot được vào Hyprland:
+
 ```bash
 # Kiểm tra Hyprland
 Hyprland
@@ -118,6 +128,7 @@ cat ~/.local/share/hyprland/hyprland.log
 ```
 
 ### Thiếu fonts/icons:
+
 ```bash
 # Chạy lại cài fonts
 cd ~/myarch
@@ -126,6 +137,7 @@ fc-cache -fv
 ```
 
 ### Quickshell không chạy:
+
 ```bash
 # Kiểm tra quickshell
 quickshell -c ~/.config/quickshell/ii/shell.qml
