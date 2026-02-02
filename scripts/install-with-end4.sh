@@ -60,23 +60,13 @@ if [[ ! $REPLY =~ ^[Yy]$ ]]; then
     exit 0
 fi
 
-# Clone and run end-4 installer
-print_step "Cloning end-4/dots-hyprland..."
-
-if [ -d "/tmp/dots-hyprland" ]; then
-    rm -rf /tmp/dots-hyprland
-fi
-
-git clone --depth=1 https://github.com/end-4/dots-hyprland.git /tmp/dots-hyprland
-
+# Run end-4 online installer
 print_step "Running end-4 installer..."
 echo -e "${YELLOW}Follow the prompts from the end-4 installer.${NC}"
 echo -e "${YELLOW}When asked, install recommended packages.${NC}"
 echo ""
 
-cd /tmp/dots-hyprland
-chmod +x ./setup
-./setup
+bash <(curl -s https://ii.clsty.link/get)
 
 print_success "end-4 dotfiles installed!"
 
