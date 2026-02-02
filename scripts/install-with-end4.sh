@@ -75,7 +75,8 @@ echo -e "${YELLOW}When asked, install recommended packages.${NC}"
 echo ""
 
 cd /tmp/dots-hyprland
-./install.sh
+chmod +x ./setup
+./setup
 
 print_success "end-4 dotfiles installed!"
 
